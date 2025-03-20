@@ -3,8 +3,8 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
-    image: miraclemonad/react-app:1.0.0
-    container_name: react
+    image: miraclemonad/react-app:latest
+    container_name: app
     restart: always
     ports:
       - "4173:4173"
@@ -31,7 +31,7 @@ services:
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
-    command: certonly --webroot -w /var/www/certbot --force-renewal --email noreplyr38@gmail.com -d testingdomain.web.id --agree-tos
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email <your_email@example.com> -d <your_domain.com> --agree-tos
 
 networks:
   my_network:

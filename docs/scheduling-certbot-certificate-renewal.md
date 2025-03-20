@@ -25,7 +25,7 @@ Choose 1 to use nano editor then copy paste script below,
 Every 2 Months, 1st Day at 5:00 AM:
 
 ```bash
-0 5 1 */2 * sudo <docker path location> compose -f <docker-compose.yaml file> up certbot
+0 5 1 */2 * sudo <docker path location> compose -f <docker-compose.yaml path location> up certbot
 ```
 
 or
@@ -34,7 +34,7 @@ or
 Daily at Midnight:
 
 ```bash
-0 0 * * * sudo <docker path location> compose -f <docker-compose.yaml file> up certbot
+0 0 * * * sudo <docker path location> compose -f <docker-compose.yaml path location> up certbot
 ```
 
 Then save and exit -> CTRL+0 and press Enter then CTRL+X

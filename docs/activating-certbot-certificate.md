@@ -54,8 +54,8 @@ Copy and paste this script to text editor
 ```bash
 services:
   app:
-    image: miraclemonad/react-app:1.0.0
-    container_name: react
+    image: miraclemonad/react-app:1.1.0
+    container_name: app
     restart: always
     ports:
       - "4173:4173"
