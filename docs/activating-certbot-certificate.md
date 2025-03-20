@@ -54,7 +54,7 @@ Copy and paste this script to text editor
 ```bash
 services:
   app:
-    image: miraclemonad/react-app:1.1.0
+    image: miraclemonad/react-app:latest
     container_name: app
     restart: always
     ports:
@@ -82,7 +82,7 @@ services:
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
-    command: certonly --webroot -w /var/www/certbot --force-renewal --email noreplyr38@gmail.com -d testingdomain.web.id --agree-tos
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email <your_email@example.com> -d <your_domain.com> --agree-tos
 
 networks:
   my_network:
@@ -141,9 +141,9 @@ http {
 
     server {
         listen 443 ssl;
-        ssl_certificate /etc/letsencrypt/live/testingdomain.web.id/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/testingdomain.web.id/privkey.pem;
-        server_name testingdomain.web.id;
+        ssl_certificate /etc/letsencrypt/live/<your_domain.com>/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/<your_domain.com>/privkey.pem;
+        server_name <your_domain.com>;
 
         location / {
             proxy_pass http://app:4173;
